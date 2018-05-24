@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RefreshScope
 @RestController
-class TestController {
+class TestValueController {
 
     //通过@Value("${from}")绑定配置服务中配置的from属性
     @Value("${from}")
