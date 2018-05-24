@@ -45,6 +45,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+
+        <!--
+        配置自动刷新git配置文件的修改
+        1.添加spring-boot-starter-actuator依赖
+        2.给加载变量的类上面加载@RefreshScope注解
+        3.发送POST请求:http://localhost:7002/refresh，即可自动刷新
+        4.http://localhost:7002/username 可以看到配置已经被刷新
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
 

@@ -10,20 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 class TestValueController {
 
     //通过@Value("${from}")绑定配置服务中配置的from属性
-    @Value("${from}")
-    private String from;
+    @Value("${datasource.username}")
+    private String username;
 
-    @RequestMapping("/from")
-    public String from() {
-        return this.from;
+    @RequestMapping("/username")
+    public String queryUserName() {
+        return this.username;
     }
-
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    public String getFrom() {
-        return from;
-    }
-
 }
