@@ -57,6 +57,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
+        <!--
+        支持使用@ConfigurationProperties注解:
+        与@Component一起使用
+        使用属性时使用@Autowired注入属性实体类
+        如果未生效，使用@EnableConfigurationProperties(PropertyDto.class)来明确指定需要用哪个实体类来装载配置信息
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
 
