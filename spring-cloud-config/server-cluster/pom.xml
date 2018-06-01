@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zlb</groupId>
-    <artifactId>client</artifactId>
+    <artifactId>server-cluster</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>client</name>
+    <name>server-cluster</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -35,39 +35,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        <!--
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </dependency>-->
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-
-        <!--
-        配置自动刷新git配置文件的修改
-        1.添加spring-boot-starter-actuator依赖
-        2.给加载变量的类上面加载@RefreshScope注解
-        3.发送POST请求:http://localhost:7002/refresh，即可自动刷新
-        4.http://localhost:7002/username 可以看到配置已经被刷新
-        -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <!--
-        支持使用@ConfigurationProperties注解:
-        与@Component一起使用
-        使用属性时使用@Autowired注入属性实体类
-        如果未生效，使用@EnableConfigurationProperties(PropertyDto.class)来明确指定需要用哪个实体类来装载配置信息
-        -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
 
         <dependency>
@@ -75,7 +51,6 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
     </dependencies>
-
 
     <dependencyManagement>
         <dependencies>
