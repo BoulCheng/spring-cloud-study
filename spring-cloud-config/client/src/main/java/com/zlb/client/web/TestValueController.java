@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 class TestValueController {
 
     //通过@Value("${from}")绑定配置服务中配置的from属性
-    @Value("${datasource.username}")
-    private String username;
+    @Value("${datasource.paraTest}")
+    private String paraTest;
 
     @Autowired
     PropertyDto propertyDto;
@@ -24,19 +24,19 @@ class TestValueController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/username")
+    @RequestMapping("/paraTest")
     public String queryUserName() {
-        return this.username;
+        return "paraTest: " + this.paraTest;
     }
 
-    @RequestMapping("/username2")
+    @RequestMapping("/paraTest2")
     public String queryName() {
-        String userName = propertyDto.getUsername();
-        System.out.println("userName: " + userName);
-        return userName;
+        String paraTest = propertyDto.getParaTest();
+        System.out.println("paraTest: " + paraTest);
+        return "paraTest: " + paraTest;
     }
 
-    @RequestMapping("/username3")
+    @RequestMapping("/user")
     public String username3() {
         String users = JSON.toJSONString(userService.listAllBUser());
         System.out.println("users: " + users);

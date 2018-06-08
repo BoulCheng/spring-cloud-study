@@ -18,13 +18,13 @@ import java.io.Serializable;
 public class PropertyDto implements Serializable {
     private static final long serialVersionUID = -7607303843472668922L;
 
-    private String username;
+    private String paraTest;
 
-    public String getUsername() {
-        return username;
+    public String getParaTest() {
+        return paraTest;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setParaTest(String paraTest) {
+        this.paraTest = paraTest;
     }
 }
